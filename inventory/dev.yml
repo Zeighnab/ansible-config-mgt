@@ -1,12 +1,13 @@
-[nfs]
-172.31.80.42 ansible_ssh_user='ec2-user'
+nfs ansible_host=172.31.80.42 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=mac-key.pem
+
+web01 ansible_host=172.31.93.48 ansible_ssh_user='ec2-user' ansible_ssh_private_key_file=mac-key.pem
+web02 ansible_host=172.31.94.128 ansible_ssh_user='ec2-user' ansible_ssh_private_key_file=mac-key.pem
+
+db ansible_host=172.31.27.27 ansible_ssh_user='ubuntu' ansible_ssh_private_key_file=mac-key.pem
 
 [webservers]
-172.31.93.48 ansible_ssh_user='ec2-user' 
-172.31.94.128 ansible_ssh_user='ec2-user'
-
-[db]
-172.31.27.27 ansible_ssh_user='ubuntu' 
+web01
+web02
 
 # Groups of group
 # [dc_ohio:children]
