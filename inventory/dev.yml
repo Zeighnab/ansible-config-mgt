@@ -1,12 +1,12 @@
 [nfs]
-nfs ansible_host=172.31.80.42 ansible_ssh_user='ec2-user'
+nfs ansible_host=172.31.80.42 ansible_ssh_user='ec2-user' ansible_ssh_private_key_file=mac-key.pem
 
 [webservers]
-web01 ansible_host=172.31.93.48 ansible_ssh_user='ec2-user'
-web02 ansible_host=172.31.94.128 ansible_ssh_user='ec2-user'
+web01 ansible_host=172.31.93.48 ansible_ssh_user='ec2-user' ansible_ssh_private_key_file=mac-key.pem
+web02 ansible_host=172.31.94.128 ansible_ssh_user='ec2-user' ansible_ssh_private_key_file=mac-key.pem
 
 [db]
-db ansible_host=172.31.27.27 ansible_ssh_user='ubuntu'
+db ansible_host=172.31.27.27 ansible_ssh_user='ubuntu' ansible_ssh_private_key_file=mac-key.pem
 
 # Groups of group
 # [dc_ohio:children]
@@ -14,8 +14,8 @@ db ansible_host=172.31.27.27 ansible_ssh_user='ubuntu'
 # webservers
 # db
 
-[dc_ohio:vars]
-ansible_ssh_private_key_file=mac-key.pem
+# [dc_ohio:vars]
+# ansible_ssh_private_key_file=mac-key.pem
 
 # [lb]
 # <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'
