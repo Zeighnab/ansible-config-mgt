@@ -9,10 +9,10 @@ web02 ansible_host=172.31.94.128 ansible_ssh_user='ec2-user'
 db ansible_host=172.31.27.27 ansible_ssh_user='ubuntu'
 
 # Groups of group
-[dc_ohio:children]
-nfs
-webservers
-db
+# [dc_ohio:children]
+# nfs
+# webservers
+# db
 
 [dc_ohio:vars]
 ansible_ssh_private_key_file=mac-key.pem
